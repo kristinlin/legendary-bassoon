@@ -27,7 +27,7 @@ var draw = function(e) {
 }
 
 var clearing = function(e) {
-    ctx.clearRect(0, 0, 500, 500);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 var toggling = function(e) {
