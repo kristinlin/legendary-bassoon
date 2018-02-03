@@ -4,17 +4,20 @@
     <title>WORK 00</title>
   </head>
   <body>
-    <h1>Let's Draw!</h1>
-    <canvas style="border-style: solid"
-	    height="500"
-	    width="500"
-	    id="board">
-      Do yourself a favor and get yourself a new browser.
-    </canvas>
-    <form>
-      <input id="clear" type="submit" value="CLEAR">
-      <input id="toggle" type="submit" value="TOGGLE">
-    </form>
-    <script src="draw.js" type='text/javascript'></script>
+    <div style="padding: 10px 100px 10px">
+      <h1>Let's Draw!</h1>
+      <form>
+	<input id="clear" type="button" value="CLEAR">
+	<input id="toggle" type="button" value="TOGGLE">
+      </form>
+      <br>
+      <canvas style="border-style: solid" 
+	      height="500"
+	      width="500"
+	      id="board">
+	Do yourself a favor and get yourself a new browser.
+      </canvas>
+      <script src="draw.js" type='text/javascript'></script>
+    </div>
   </body>
 </html>
