@@ -7,27 +7,29 @@ var mode = 1;
 
 var draw = function(e) {
 
-    //find the coors after finding the measurements of borders
-    var domRECT = canvas.getBoundingClientRect();
-    x = e.clientX - domRECT.left;
-    y = e.clientY - domRECT.top;
-
-    //clear the path 
+    //draw line connecting the previous node to current one
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
     ctx.beginPath();
-
-    //if rect mode else circle mode
+    
+    //if rect mode else circle mode; draw on cleared path
     if (mode == 1) {
 	ctx.fillStyle="#2382c2";
-	ctx.fillRect(x, y, 25, 25);
+	ctx.fillRect(e.offsetX, e.offsetY, 25, 25);
     } else {
 	ctx.fillStyle="#199112";
-	ctx.arc(x, y, 13, 0, 2*Math.PI);
+	ctx.arc(e.offsetX, e.offsetY, 13, 0, 2*Math.PI);
 	ctx.fill();
     }
+
+    //clear path of circle, but keep the clicked location
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
 }
 
 var clearing = function(e) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
 }
 
 var toggling = function(e) {
